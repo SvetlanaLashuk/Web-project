@@ -3,9 +3,16 @@ html
     head
         title RSS Feed
         link(rel='stylesheet', href='/stylesheets/style.css')
+
     body
-        h2 RSS Feed
-        select
-            each feed in feeds
-                option(value=feed.url)= feed.title
+
+        header
+            #logo RSS Feed
+        div#content
+            div
+                #selectBox
+            select#feedSelect(onchange='onChangeFeed()')
+                    each feed in feeds
+                        option(value=feed.url)= feed.title
+            div#posts
         script(src='./javascripts/index.js')
